@@ -1,0 +1,39 @@
+<div class="container" ng-controller="Ctrl">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Static#index</h1>
+      <p>Find me in app/views/static/index.html.erb</p>
+      <p>
+        <a href="#" editable-text="user.name" class="ng-scope ng-binding editable editable-click">{{ user.name || 'empty' }}</a>
+        </p>
+        <p>
+        <a href="#" editable-text="user.name_first" >{{ user.name_first || 'empty' }}</a>
+        </p>
+        <div editable-textarea="wiki.body">
+          {{wiki.body || 'empty'}}
+        </div>
+      <p>asdfasd</p>
+    </div>
+    <div class="col-sm-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 editable-text="wiki.title">{{wiki.title}}</h4>
+      </div>
+      <div class="panel-body">
+      {{wiki.body}}
+    </div>
+    </div>
+  </div>
+  </div>
+  <div class="row">
+    <input type="button" ng-click="myclick()" class="btn btn-default" value="Call ajax">
+  </div>
+</div>
+<div ng-controller="UserCtrl">
+  <span></span>
+  <form ng-submit="submit()">
+    <input ng-model="user.username" type="text" name="user" placeholder="Username" />
+    <input ng-model="user.password" type="password" name="pass" placeholder="Password" />
+    <input type="submit" value="Login" />
+  </form>
+</div>
