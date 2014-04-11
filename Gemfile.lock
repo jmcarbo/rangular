@@ -72,6 +72,7 @@ GEM
       actionpack (>= 3.2.11)
       railties (>= 3.2.11)
     rails-assets-angular (1.2.16)
+    rails-assets-angular-activerecord (0.2.1)
     rails-assets-angular-route (1.2.16)
       rails-assets-angular (= 1.2.16)
     rails-assets-angular-xeditable (0.1.8)
@@ -131,6 +132,7 @@ DEPENDENCIES
   rails (= 4.0.3)
   rails-api
   rails-assets-angular
+  rails-assets-angular-activerecord
   rails-assets-angular-route
   rails-assets-angular-xeditable
   rails-assets-restangular

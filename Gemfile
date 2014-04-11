@@ -35,6 +35,7 @@ gem 'rails-assets-angular-route'
 gem 'rails-assets-angular-xeditable'
 gem 'rails-assets-underscore'
 gem 'rails-assets-restangular'
+gem 'rails-assets-angular-activerecord'
 gem 'jwt'
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

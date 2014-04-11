@@ -1,10 +1,16 @@
-var rerp = angular.module('rerp', ['ngRoute','xeditable']);
+var rerp = angular.module('rerp', ['ngRoute','xeditable','ActiveRecord']);
+
+rerp.factory('Task', function(ActiveRecord){
+  return ActiveRecord.extend({
+    $urlRoot: '/wikis'
+  });
+});
 
 rerp.run(function(editableOptions) {
   editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
 });
 
-rerp.controller('Ctrl', function($scope, $http) {
+rerp.controller('Ctrl', function($scope, $http, Task, $document) {
   $scope.user = {
       name: 'awesome user'
     };  
@@ -15,8 +21,36 @@ rerp.controller('Ctrl', function($scope, $http) {
       .success(function (data, status, headers, config) {
         console.log(data); // Should log 'foo'
       });
-  }
+  };
 
+  $scope.myclick2 = function(){
+     Task.fetchOne(1).then(function (task7) { 
+       $scope.task = task7; 
+     });
+  };
+
+  $scope.saveTask = function (task) {
+    $scope.spinnerVisible = true;
+    task.$save().then(function () {
+      $scope.successVisible = true;
+    }).catch(function (error) {
+      $scope.error = error;
+    }).finally(function () {
+      $scope.spinnerVisible = false;
+    });
+  };
+
+  $scope.newTask = function (task) {
+    task.id = null;
+    $scope.spinnerVisible = true;
+    task.$save().then(function () {
+      $scope.successVisible = true;
+    }).catch(function (error) {
+      $scope.error = error;
+    }).finally(function () {
+      $scope.spinnerVisible = false;
+    });
+  };
 });
 
 rerp.factory('authInterceptor', function ($rootScope, $q, $window) {

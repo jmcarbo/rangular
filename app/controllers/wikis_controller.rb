@@ -1,5 +1,7 @@
 class WikisController < ApplicationController
+  protect_from_forgery except: [:create, :update]
   before_action :validate_token
+
   # GET /wikis
   # GET /wikis.json
   def index
@@ -33,7 +35,7 @@ class WikisController < ApplicationController
   def update
     @wiki = Wiki.find(params[:id])
 
-    if @wiki.update(params[:wiki])
+    if @wiki.update(params.require(:wiki).permit(:title, :body, :id, :created_at, :updated_at))
       head :no_content
     else
       render json: @wiki.errors, status: :unprocessable_entity

@@ -18,4 +18,5 @@
 //= require underscore
 //= require restangular
 //= require angular-xeditable
+//= require angular-activerecord
 //= require_tree .

@@ -27,6 +27,19 @@
   </div>
   <div class="row">
     <input type="button" ng-click="myclick()" class="btn btn-default" value="Call ajax">
+    <input type="button" ng-click="myclick2()" class="btn btn-default" value="Call active record">
+  </div>
+  <div>
+    <form>
+      <input ng-model="task.title">
+      <textarea ng-model="task.body">
+      </textarea>
+      <input type="button" ng-click="saveTask(task)" class="btn btn-default" value="Save task">
+      <input type="button" ng-click="newTask(task)" class="btn btn-default" value="New wiki">
+    </form>
+  </div>
+  <div>
+    {{task.title}}
   </div>
 </div>
 <div ng-controller="UserCtrl">
