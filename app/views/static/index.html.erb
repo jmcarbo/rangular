@@ -49,7 +49,9 @@
     <input ng-model="user.password" type="password" name="pass" placeholder="Password" />
     <input type="submit" value="Login" />
   </form>
-  <div infinite-scroll="loadMore()" infinite-scroll-distance="2">
-    <img ng-repeat='image in images' ng-src='http://placehold.it/225x250&text={{image}}'>
+  <div infinite-scroll="loadMore()" infinite-scroll-distance="1">
+    <ul>
+      <li ng-repeat='image in images'>{{image}}</li>
+  </ul>
   </div>
 </div>

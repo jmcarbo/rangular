@@ -80,13 +80,16 @@ rerp.config(function ($httpProvider) {
 
 rerp.controller('UserCtrl', function ($scope, $http, $window) {
   $scope.images = [1, 2, 3, 4, 5, 6, 7, 8];
+  $scope.myVal = 0;
 
-    $scope.loadMore = function() {
-        var last = $scope.images[$scope.images.length - 1];
-        for(var i = 1; i <= 8; i++) {
-              $scope.images.push(last + i);
-            }
-      };
+  $scope.loadMore = function() {
+    var last = $scope.images[$scope.images.length - 1];
+    for(var i = 1; i <= 8; i++) {
+      $scope.images.push(last+i);
+    }
+    $scope.$apply();
+  };
+
   $scope.user = {username: 'john.doe', password: 'foobar'};
   $scope.message = '';
   $scope.submit = function () {
