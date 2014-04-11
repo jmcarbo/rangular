@@ -21,7 +21,7 @@ class WikisController < ApplicationController
   # POST /wikis
   # POST /wikis.json
   def create
-    @wiki = Wiki.new(params[:wiki])
+    @wiki = Wiki.new(params.require(:wiki).permit(:title, :body))
 
     if @wiki.save
       render json: @wiki, status: :created, location: @wiki

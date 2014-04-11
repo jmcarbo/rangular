@@ -19,4 +19,5 @@
 //= require restangular
 //= require angular-xeditable
 //= require angular-activerecord
+//= require ngInfiniteScroll
 //= require_tree .

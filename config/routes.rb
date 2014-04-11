@@ -1,4 +1,5 @@
 Rangular::Application.routes.draw do
+  mount JasmineRails::Engine => '/specs' if defined?(JasmineRails)
   resources :wikis, except: [:new, :edit]
   post "authenticate" => 'auth#create'
   get "static/index"

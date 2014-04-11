@@ -1,4 +1,4 @@
-var rerp = angular.module('rerp', ['ngRoute','xeditable','ActiveRecord']);
+var rerp = angular.module('rerp', ['ngRoute','xeditable','ActiveRecord','infinite-scroll']);
 
 rerp.factory('Task', function(ActiveRecord){
   return ActiveRecord.extend({
@@ -11,6 +11,7 @@ rerp.run(function(editableOptions) {
 });
 
 rerp.controller('Ctrl', function($scope, $http, Task, $document) {
+
   $scope.user = {
       name: 'awesome user'
     };  
@@ -41,9 +42,11 @@ rerp.controller('Ctrl', function($scope, $http, Task, $document) {
   };
 
   $scope.newTask = function (task) {
-    task.id = null;
+    var taskn = new Task();
+    taskn.title = task.title;
+    taskn.body = task.body;
     $scope.spinnerVisible = true;
-    task.$save().then(function () {
+    taskn.$save().then(function () {
       $scope.successVisible = true;
     }).catch(function (error) {
       $scope.error = error;
@@ -76,6 +79,14 @@ rerp.config(function ($httpProvider) {
 });
 
 rerp.controller('UserCtrl', function ($scope, $http, $window) {
+  $scope.images = [1, 2, 3, 4, 5, 6, 7, 8];
+
+    $scope.loadMore = function() {
+        var last = $scope.images[$scope.images.length - 1];
+        for(var i = 1; i <= 8; i++) {
+              $scope.images.push(last + i);
+            }
+      };
   $scope.user = {username: 'john.doe', password: 'foobar'};
   $scope.message = '';
   $scope.submit = function () {
