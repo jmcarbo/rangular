@@ -1,4 +1,10 @@
-var rerp = angular.module('rerp', ['ngRoute','xeditable','ActiveRecord','infinite-scroll','ui.bootstrap','angularFileUpload']);
+var rerp = angular.module('rerp', ['ngRoute','xeditable',
+                          'ActiveRecord','infinite-scroll',
+                          'ui.bootstrap','angularFileUpload',
+                          'ngGrid',
+                          'ui.calendar',
+                          'ui.sortable'
+                          ]);
 
 rerp.factory('Task', function(ActiveRecord){
   return ActiveRecord.extend({
@@ -11,7 +17,12 @@ rerp.run(function(editableOptions) {
 });
 
 rerp.controller('Ctrl', function($scope, $http, Task, $document) {
-
+ $scope.myData = [{name: "Moroni", age: 50},
+                      {name: "Tiancum", age: 43},
+                      {name: "Jacob", age: 27},
+                      {name: "Nephi", age: 29},
+                      {name: "Enos", age: 34}];
+  $scope.gridOptions = { data: 'myData' };
   $scope.user = {
       name: 'awesome user'
     };  

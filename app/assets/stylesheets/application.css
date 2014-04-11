@@ -11,6 +11,9 @@
  *= require_self
  *= require bootstrap
  *= require angular-xeditable
+ *= require ng-grid
+ *= require fullcalendar
+ *= require jquery-ui
  *= require_tree .
  *
  */

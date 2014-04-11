@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap
 //= require angular
 //= require angular-route
@@ -21,6 +22,10 @@
 //= require angular-activerecord
 //= require ngInfiniteScroll
 //= require angular-bootstrap
+//= require ng-grid
+//= require fullcalendar
+//= require angular-ui-calendar
+//= require angular-ui-sortable
 //= es5-shim
 //= require angular-file-upload
 //= require_tree .

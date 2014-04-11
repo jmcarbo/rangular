@@ -1,3 +1,14 @@
+<div ng-controller="SortableCtrl">
+<ul ui-sortable ng-model="items">
+    <li ng-repeat="item in items">{{ item }}</li>
+</ul>
+</div>
+<div ng-controller="CalendarCtrl">
+  <button class="btn btn-success" ng-click="changeView('agendaDay', myCalendar1)">AgendaDay</button>
+  <button class="btn btn-success" ng-click="changeView('agendaWeek', myCalendar1)">AgendaWeek</button>
+  <button class="btn btn-success" ng-click="changeView('month', myCalendar1)">AgendaMonth</button>
+  <div ui-calendar="uiConfig.calendar" class="span8 calendar" calendar="myCalendar1" ng-model="eventSources"></div>
+</div>
 <div ng-controller="AccordionDemoCtrl">
   <label class="checkbox">
     <input type="checkbox" ng-model="oneAtATime">
@@ -27,6 +38,7 @@
 <div class="container" ng-controller="Ctrl">
   <div class="row">
     <div class="col-sm-12">
+      <div class="gridStyle" ng-grid="gridOptions">
       <h1>Static#index</h1>
       <p>Find me in app/views/static/index.html.erb</p>
       <p>
