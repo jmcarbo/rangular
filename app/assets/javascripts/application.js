@@ -20,4 +20,7 @@
 //= require angular-xeditable
 //= require angular-activerecord
 //= require ngInfiniteScroll
+//= require angular-bootstrap
+//= es5-shim
+//= require angular-file-upload
 //= require_tree .

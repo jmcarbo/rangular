@@ -37,6 +37,8 @@ gem 'rails-assets-underscore'
 gem 'rails-assets-restangular'
 gem 'rails-assets-angular-activerecord'
 gem 'rails-assets-ngInfiniteScroll'
+gem 'rails-assets-angular-file-upload'
+gem 'rails-assets-angular-bootstrap'
 gem 'jwt'
 group :test, :development do
     gem 'jasmine-rails'
