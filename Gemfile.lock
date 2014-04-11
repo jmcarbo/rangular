@@ -85,6 +85,8 @@ GEM
     rails-assets-angular-file-upload (0.4.1)
       rails-assets-angular (~> 1.2.11)
       rails-assets-es5-shim (~> 2.1.0)
+    rails-assets-angular-highlightjs (0.2.7)
+      rails-assets-highlightjs (= 8.0.0)
     rails-assets-angular-route (1.2.16)
       rails-assets-angular (= 1.2.16)
     rails-assets-angular-ui-calendar (0.8.0)
@@ -100,6 +102,7 @@ GEM
     rails-assets-es5-shim (2.1.0)
     rails-assets-fullcalendar (1.6.4)
       rails-assets-jquery (~> 1.10.2)
+    rails-assets-highlightjs (8.0.0)
     rails-assets-jquery (1.10.2)
     rails-assets-jquery-ui (1.10.4)
       rails-assets-jquery (>= 1.6)
@@ -165,11 +168,13 @@ DEPENDENCIES
   rails-assets-angular-activerecord
   rails-assets-angular-bootstrap
   rails-assets-angular-file-upload
+  rails-assets-angular-highlightjs
   rails-assets-angular-route
   rails-assets-angular-ui-calendar
   rails-assets-angular-ui-sortable
   rails-assets-angular-xeditable
   rails-assets-fullcalendar
+  rails-assets-highlightjs
   rails-assets-jquery-ui
   rails-assets-ng-grid
   rails-assets-ngInfiniteScroll

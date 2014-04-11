@@ -26,6 +26,8 @@
 //= require fullcalendar
 //= require angular-ui-calendar
 //= require angular-ui-sortable
+//= require highlightjs
+//= require angular-highlightjs
 //= es5-shim
 //= require angular-file-upload
 //= require_tree .

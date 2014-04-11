@@ -3,7 +3,8 @@ var rerp = angular.module('rerp', ['ngRoute','xeditable',
                           'ui.bootstrap','angularFileUpload',
                           'ngGrid',
                           'ui.calendar',
-                          'ui.sortable'
+                          'ui.sortable',
+                          'hljs'
                           ]);
 
 rerp.factory('Task', function(ActiveRecord){

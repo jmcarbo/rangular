@@ -1,3 +1,4 @@
+
 <div ng-controller="SortableCtrl">
 <ul ui-sortable ng-model="items">
     <li ng-repeat="item in items">{{ item }}</li>
@@ -36,6 +37,25 @@
   </accordion>
 </div>
 <div class="container" ng-controller="Ctrl">
+  <div hljs source="'<html><head><body><div>asdfasdfasd</div></body></head></html>'" language="html"></div>
+  <div hljs>
+    {% if articles|length %}
+    {% for article in articles %}
+
+    {# Striped table #}
+    <tr class="{% cycle odd,even %}">
+        <td>{{ article|default:"Hi... "|escape }}</td>
+          <td {% if article.today %}class="today"{% endif %}>{{ article.date|date:"d.m.Y" }}</td>
+        </tr>
+
+        {% endfor %}
+        {% endif %}
+
+        {% comment %}
+        Comments may be long and
+        multiline.
+        {% endcomment %}
+      </div>
   <div class="row">
     <div class="col-sm-12">
       <div class="gridStyle" ng-grid="gridOptions">
